@@ -1,9 +1,9 @@
 import styled from "styled-components";
 //import {FormContainer, MapImg, PinImg} from "./CreateTournament/DetailsTournament";
 import {PageTitleContainer, PageTitleText} from "../styles/page-title";
-import {SectionTitle, SectionTitleText} from "../styles/section-title";
+import { SectionTitleText} from "../styles/section-title";
 import letter from "../assets/svgs/letter1.svg";
-import direction from "../assets/svgs/direction2.svg";
+import PA from "../assets/images/propulsion1.png";
 import React from "react";
 
 //import map from '../assets/svgs/map.svg';
@@ -13,9 +13,9 @@ import React from "react";
 
 export const Container = styled.div`
   //border: red solid;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  
+  margin-left: 6%;
   //margin-top: 1%;
   //margin-bottom: 0;
   background: black;
@@ -41,16 +41,22 @@ export const Wrapper = styled.div`
   padding-bottom: 3%;
 
   img {
-    height: 25%;
+    height: 30%;
+    width: 100%;
     margin-bottom: 10%;
+  }
+
+  h1 {
+    font-size: 10px;
   }
 `
 
 export const InfoBox = styled.div`
     //border: solid green;
     display: flex;
+    align-items: flex-end;
     height:69%;
-    width: 63%;
+    width: 70%;
     
 `
 export const PageTitleTxt = styled(PageTitleText)`
@@ -63,14 +69,23 @@ export const PageTitleTxt = styled(PageTitleText)`
   width: 75%;
   padding-bottom: 2%;
   border-bottom: 1px solid white;
-  
-  
+
   
 `
+
 export const SectionTitleBig = styled(SectionTitleText)`
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 3%;
+`
+
+export const SectionTitle2 = styled.p`
+  //border: solid yellow;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  
 `
 
 /* export const MapImg = styled.img`
@@ -107,16 +122,18 @@ export const PinImg = styled.img`
 
 ` */
 
+/* export const PAImg = styled.img`
+    //border: solid green;
+    
+    position: absolute;
+    bottom: 25.5%;
+    
+    
+` */
 
 
 const ContactUs = () => {
- const Mailto = ({ email, subject = '', body = '', children }) => {
-  let params = subject || body ? '?' : '';
-  if (subject) params += `subject=${encodeURIComponent(subject)}`;
-  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
-
-  return <a style={{textDecoration:"none"}} href={`mailto:${email}${params}`}>{children}</a>;
-};
+ 
   return (
   
   <>
@@ -124,19 +141,19 @@ const ContactUs = () => {
     
     
       <PageTitleTxt> Contact Us</PageTitleTxt>
-
+      
       <InfoBox>
-        <Wrapper>
 
-          <img src={direction} alt=""/>
-          <SectionTitleBig>ADDRESS</SectionTitleBig>
-          <SectionTitle pageTitle="Heinrichstrasse 200,8005 Zürich."></SectionTitle>
+        <Wrapper>
+          <img src={PA} alt=""/>
+          <SectionTitleBig>Advisor</SectionTitleBig>
+          <SectionTitle2>Heinrichstrasse 200,<br/> 8005 Zürich</SectionTitle2>
         </Wrapper>
     
         <Wrapper>
           <img src={letter} alt=""/>
           <SectionTitleBig>EMAIL</SectionTitleBig>
-          <Mailto email={"octo.tournament@gmail.com"}><SectionTitle pageTitle="octo.tournament@gmail.com"></SectionTitle></Mailto>
+          <SectionTitle2 >octo.tournament@gmail.com</SectionTitle2>
         </Wrapper>
       </InfoBox>
 
