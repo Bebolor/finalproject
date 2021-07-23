@@ -198,8 +198,9 @@ const ParticipantsContainer = styled.div`
         //border: solid blue;
         width: 40%;
         position: absolute;
-        top:47%;
+        top:48%;
         left: 53.2%;
+        opacity: 0.4;
     }
     
 `

@@ -33,26 +33,31 @@ const CardLeft = styled.div`
     align-items: center;
     justify-content: center;
 
+    a   { 
+        //border: solid red;
+        text-align: center;
+        height: 50px;
+        width: 100%; 
+    }
+
 
     button {
         //border: solid yellow;
         margin-top: 1%;
-        height: 50px;
+        height: auto;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 11.5px;
         width: 50%;
+        height: 100%;
         
 
         &:hover {
             width: 65%;
         }
 
-        a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 11.5px;
-            height: auto;
-            
-        }
+        
     }
 `;
 
@@ -190,7 +195,7 @@ const ProfileCard = (props) => {
                 </Name>
                 {                    
                 props.edit ?
-                <BaseButton><Link to={`/user/${props.user.id}/edit`}> Edit Profile </Link> </BaseButton> : null
+                <Link to={`/user/${props.user.id}/edit`}><BaseButton> Edit Profile</BaseButton></Link> : null
                 }
             </CardLeft>
 
